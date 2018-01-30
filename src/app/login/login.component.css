@@ -1,0 +1,14 @@
+.login {
+    max-width: 300px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.input{
+    display: flex;
+    flex-direction: column;
+}
+.text{
+    margin-left: 40%;
+}

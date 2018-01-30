@@ -1,0 +1,16 @@
+ 
+
+<div class="login" >
+    <div class="text"> <h1>Login</h1></div>
+            <div class="login">
+            <mat-form-field>
+        <input matInput placeholder="Username" type="text" name="email" [(ngModel)]= 'email'  id="name">
+    </mat-form-field>
+    <div class="login">
+    <mat-form-field>
+        <input matInput type="password" name="password" [(ngModel)]= 'password' placeholder="password" id="Password">
+    </mat-form-field>
+ 
+        <button mat-raised-button color="primary" type="submit"(click)="loginemail(email,password)" value="login" class="btn btn-success">Login</button>
+
+</div>

@@ -1,0 +1,47 @@
+
+<mat-toolbar>
+  <mat-toolbar-row>
+    <label>Elephant Cars</label>
+    <button mat-raised-button color="warn"  class="right" (click)="logoutgoogle()">Logout</button> 
+  </mat-toolbar-row>
+  </mat-toolbar>
+  <br>
+  <button mat-raised-button (click)="Createnewcar()" id="add_new_car">Create a new car </button>
+  <br>
+  <br>
+<div class="example-container mat-elevation-z8" >
+  <mat-table #table [dataSource]="dataSource">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="Brand">
+      <mat-header-cell *matHeaderCellDef> Brand </mat-header-cell>
+      <mat-cell (click)="cardetails(index)" *matCellDef="let element;let index = index"> {{element.Brand}} </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="Country">
+      <mat-header-cell *matHeaderCellDef> Country </mat-header-cell>
+      <mat-cell (click)="cardetails(index)" *matCellDef="let element;let index = index"> {{element.Country}} </mat-cell>
+    </ng-container>
+
+    <!-- Weight Column-->
+    <ng-container matColumnDef="year">
+      <mat-header-cell *matHeaderCellDef> year </mat-header-cell>
+      <mat-cell (click)="cardetails(index)" *matCellDef="let element;let index = index"> {{element.year}} </mat-cell>
+    </ng-container> 
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="Delete">
+      <mat-header-cell *matHeaderCellDef> Delete </mat-header-cell>
+        <mat-cell *matCellDef="let element; let index = index"> 
+          <button mat-raised-button  color="primary" (click)="deletecar(index)">Delete</button> 
+        </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>
